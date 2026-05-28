@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeam Connect — Sales Pitch Deck 2026</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --z-bg: #0a0a0f;
+    --z-surface: #12121a;
+    --z-border: rgba(255,255,255,0.06);
+    --z-accent: #6366f1;
+    --z-accent-glow: rgba(99,102,241,0.25);
+    --z-green: #22c55e;
+    --z-cyan: #06b6d4;
+    --z-amber: #f59e0b;
+    --z-text: #e2e8f0;
+    --z-muted: #94a3b8;
+  }
+
+  .reveal {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--z-text);
+  }
+  .reveal .slides { text-align: left; }
+  .reveal .slides section { padding: 40px 60px; }
+
+  /* Background */
+  body { background: var(--z-bg); }
+  .reveal .slide-background { background: var(--z-bg) !important; }
+
+  /* Typography */
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #fff;
+  }
+  .reveal h1 { font-size: 2.8em; }
+  .reveal h2 { font-size: 2.2em; }
+  .reveal h3 { font-size: 1.4em; font-weight: 600; }
+  .reveal p, .reveal li { font-size: 0.85em; color: var(--z-muted); line-height: 1.7; }
+
+  /* Accent highlight */
+  .accent { color: var(--z-accent); }
+  .green { color: var(--z-green); }
+  .cyan { color: var(--z-cyan); }
+  .amber { color: var(--z-amber); }
+
+  /* Stat cards */
+  .stats-row {
+    display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1; min-width: 160px;
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--z-accent), transparent);
+  }
+  .stat-card .num {
+    font-size: 2.4em; font-weight: 900; color: #fff;
+    letter-spacing: -0.03em; line-height: 1;
+  }
+  .stat-card .label {
+    font-size: 0.7em; color: var(--z-muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 8px;
+  }
+
+  /* Pill / tag */
+  .pill {
+    display: inline-block;
+    background: rgba(99,102,241,0.12);
+    color: var(--z-accent);
+    font-size: 0.65em;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 100px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none; padding: 0; margin: 24px 0;
+  }
+  .feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 0.82em;
+    color: var(--z-muted);
+  }
+  .feature-list li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--z-accent);
+    font-weight: 700;
+  }
+
+  /* Grid layout */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  /* Card */
+  .card {
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .card h3 { margin-top: 0; font-size: 1.1em; }
+  .card p { font-size: 0.78em; }
+  .card .number,
+  .cta-card .number {
+    font-size: 0.7em; font-weight: 700;
+    color: var(--z-accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #0d0d14;
+    border: 1px solid var(--z-border);
+    border-radius: 12px;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62em;
+    color: var(--z-muted);
+    line-height: 1.8;
+    overflow: hidden;
+  }
+  .code-block .kw { color: var(--z-accent); }
+  .code-block .str { color: var(--z-green); }
+  .code-block .comment { color: #475569; }
+
+  /* Pricing row */
+  .pricing-row {
+    display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;
+  }
+  .price-card {
+    flex: 1; min-width: 140px;
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .price-card.featured {
+    border-color: var(--z-accent);
+    box-shadow: 0 0 30px var(--z-accent-glow);
+  }
+  .price-card .tier {
+    font-size: 0.7em; font-weight: 600; color: var(--z-muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .price-card .price {
+    font-size: 1.5em; font-weight: 800; color: #fff;
+    margin: 8px 0 4px;
+  }
+  .price-card .note {
+    font-size: 0.6em; color: var(--z-muted);
+  }
+
+  /* Region badge */
+  .region-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .region-card {
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .region-card .region-name {
+    font-size: 1em; font-weight: 700; color: #fff;
+  }
+  .region-card .region-count {
+    font-size: 2em; font-weight: 900; color: var(--z-accent);
+    line-height: 1;
+  }
+  .region-card .methods {
+    display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .region-card .methods span {
+    font-size: 0.6em;
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: var(--z-muted);
+  }
+
+  /* Why card */
+  .why-card {
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+  .why-card .big-num {
+    font-size: 2.2em; font-weight: 900; color: #fff;
+    letter-spacing: -0.03em;
+  }
+  .why-card .sub {
+    font-size: 0.65em; color: var(--z-accent);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .why-card h3 { text-align: center; margin: 12px 0 8px; font-size: 1em; }
+  .why-card p { text-align: center; font-size: 0.72em; }
+
+  /* Title slide logo */
+  .logo {
+    font-size: 1.2em;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    color: var(--z-accent);
+    margin-bottom: 24px;
+  }
+
+  /* CTA slide */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .cta-card {
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 16px;
+    padding: 36px;
+  }
+  .cta-card.primary {
+    border-color: var(--z-accent);
+    box-shadow: 0 0 40px var(--z-accent-glow);
+  }
+  .cta-card h3 { margin: 0 0 8px; }
+  .cta-card .email {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75em;
+    color: var(--z-accent);
+    margin-top: 16px;
+  }
+
+  /* Subtle gradient orb (decorative) */
+  .orb {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .orb-purple { background: var(--z-accent); }
+  .orb-cyan { background: var(--z-cyan); }
+
+  /* Progress bar */
+  .reveal .progress { color: var(--z-accent); height: 3px; }
+
+  /* Slide number */
+  .reveal .slide-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5em;
+    color: #475569;
+    background: transparent;
+  }
+
+  /* Transitions */
+  .reveal .slides section { transition: all 0.4s ease; }
+
+  /* Audience tags */
+  .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .tags span {
+    font-size: 0.6em;
+    background: rgba(99,102,241,0.1);
+    color: var(--z-accent);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--z-border), transparent);
+    margin: 24px 0;
+  }
+
+  /* PDF export */
+  @media print {
+    .reveal .slides section { page-break-after: always; }
+    body { background: #000; }
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section>
+  <div style="position:relative; overflow:hidden;">
+    <div class="orb orb-purple" style="top:-200px; right:-100px;"></div>
+    <div class="orb orb-cyan" style="bottom:-200px; left:-100px;"></div>
+    <div class="logo">zeam</div>
+    <h1 style="max-width:85%;">The financial fabric for <span class="accent">global money movement.</span></h1>
+    <p style="font-size:1em; max-width:720px; margin-top:24px; color:var(--z-muted);">
+      One integration. 130+ countries. Stablecoin settlement on Stellar, Ethereum &amp; Solana.
+    </p>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="num">130+</div>
+        <div class="label">Countries</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">142</div>
+        <div class="label">Live Connectors</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">99.99%</div>
+        <div class="label">STP Target</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">~6s</div>
+        <div class="label">Settlement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
+<section>
+  <div class="pill">The Problem</div>
+  <h2>Cross-border payments are <span class="accent">broken.</span></h2>
+  <div class="grid-3" style="margin-top:40px;">
+    <div class="card">
+      <div style="font-size:2em; line-height:1; margin-bottom:12px;">🏦</div>
+      <h3>Per-country banking</h3>
+      <p>Open accounts in every market. Manage dozens of banking relationships. Reconcile across all of them.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2em; line-height:1; margin-bottom:12px;">⏳</div>
+      <h3>Payments in limbo</h3>
+      <p>Funds disappear into corridors for days. Manual chasing. No verifiable proof of settlement.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2em; line-height:1; margin-bottom:12px;">🔧</div>
+      <h3>Per-provider engineering</h3>
+      <p>Every new country means a new provider, a new integration, and months of dev work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 3: WHO IT'S FOR ==================== -->
+<section>
+  <div class="pill">Built For</div>
+  <h2>Three audiences.<br><span class="accent">One platform</span> underneath.</h2>
+  <div class="grid-3" style="margin-top:36px;">
+    <div class="card">
+      <div class="number">01</div>
+      <h3>Enterprises &amp; Multinationals</h3>
+      <p>Treasury without a branch in every market. Hold working balances, pay suppliers in local currency, repatriate revenue.</p>
+      <div class="tags">
+        <span>Treasury</span><span>Supplier payments</span><span>FX</span><span>Repatriation</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="number">02</div>
+      <h3>Payroll &amp; HR Platforms</h3>
+      <p>Pay anyone, anywhere, in their local rails. Bank accounts, mobile money, cash — single API, single reconciliation file.</p>
+      <div class="tags">
+        <span>Worker payouts</span><span>Mobile money</span><span>Cash</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="number">03</div>
+      <h3>Merchants &amp; Marketplaces</h3>
+      <p>Collect locally, settle globally. Accept local payments, settle into stablecoin or your home bank account.</p>
+      <div class="tags">
+        <span>Collections</span><span>Vendor payouts</span><span>Settlement</span><span>FX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 4: API ==================== -->
+<section>
+  <div class="pill">Infrastructure</div>
+  <h2>First payment in<br><span class="accent">under five minutes.</span></h2>
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <ul class="feature-list">
+        <li>Account provisioning, on-ramp, off-ramp, payouts, collections &amp; FX — single API</li>
+        <li>Idempotency keys · webhook events · official SDKs</li>
+        <li>Multi-chain settlement — Stellar, Ethereum, Solana</li>
+        <li>Compliance Model A / B / C selectable per corridor</li>
+        <li>Sandbox with seeded corridors &amp; live webhook delivery</li>
+      </ul>
+    </div>
+    <div class="code-block">
+      <span class="comment">// POST /v1/payouts</span><br><br>
+      curl -X POST <span class="str">api.zeam.money/v1/payouts</span> \<br>
+      &nbsp;&nbsp;-H <span class="str">"Authorization: Bearer $KEY"</span> \<br>
+      &nbsp;&nbsp;-d '{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"connector"</span>: <span class="str">"ZA-OFF-001"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"amount"</span>: <span class="str">"500.00"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"currency"</span>: <span class="str">"ZAR"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"funding"</span>: {<span class="str">"asset":"USDZ"</span>}<br>
+      &nbsp;&nbsp;}'<br><br>
+      <span class="comment">── webhook: payout.delivered ──</span><br>
+      { <span class="kw">"status"</span>: <span class="str">"delivered"</span>,<br>
+      &nbsp;&nbsp;<span class="kw">"settled_at"</span>: <span class="str">"2026-04-18T10:14:07Z"</span> }
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 5: API PRICING ==================== -->
+<section>
+  <div class="pill">API Pricing</div>
+  <h2>Simple, <span class="accent">scalable</span> plans.</h2>
+  <div class="pricing-row">
+    <div class="price-card">
+      <div class="tier">Starter API</div>
+      <div class="price">$1,000</div>
+      <div class="note">/ month · month-to-month</div>
+    </div>
+    <div class="price-card featured">
+      <div class="tier">Scale API</div>
+      <div class="price">$7,500</div>
+      <div class="note">/ month · 12-month term</div>
+    </div>
+    <div class="price-card">
+      <div class="tier">Enterprise</div>
+      <div class="price">$15K+</div>
+      <div class="note">/ month · custom · dedicated TAM</div>
+    </div>
+  </div>
+  <div style="margin-top:48px;">
+    <div class="pill" style="background:rgba(34,197,94,0.1); color:var(--z-green);">Dashboard</div>
+    <h3 style="margin-top:12px;">Global Business Account — no engineering required</h3>
+  </div>
+  <div class="pricing-row">
+    <div class="price-card">
+      <div class="tier">Starter</div>
+      <div class="price">Free</div>
+      <div class="note">$0 / month</div>
+    </div>
+    <div class="price-card featured">
+      <div class="tier">Growth</div>
+      <div class="price">$500</div>
+      <div class="note">/ month · most popular</div>
+    </div>
+    <div class="price-card">
+      <div class="tier">Scale</div>
+      <div class="price">$2,500</div>
+      <div class="note">/ month · 12-month term</div>
+    </div>
+    <div class="price-card">
+      <div class="tier">Enterprise</div>
+      <div class="price">$7,500+</div>
+      <div class="note">/ month · custom</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 6: DASHBOARD ==================== -->
+<section>
+  <div class="pill">Global Business Account</div>
+  <h2>Run operations from <span class="accent">a single dashboard.</span></h2>
+  <div class="grid-2" style="margin-top:28px;">
+    <div>
+      <ul class="feature-list">
+        <li>Multi-currency accounts — USDZ, ZARZ, USDC, EURC + 12 more</li>
+        <li>Bulk payouts to bank, mobile money, cash, wallet &amp; voucher</li>
+        <li>Collections with automatic reconciliation</li>
+        <li>Stablecoin ↔ fiat conversion — no hidden spread</li>
+        <li>Full audit log · payroll · treasury · reporting</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:20px;">
+      <div style="font-size:0.55em; text-transform:uppercase; letter-spacing:0.1em; color:var(--z-muted); margin-bottom:16px;">Live Balances</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="background:rgba(99,102,241,0.08); padding:14px; border-radius:10px;">
+          <div style="font-size:0.6em; color:var(--z-muted);">USDZ</div>
+          <div style="font-size:1.2em; font-weight:800; color:#fff;">1,820,000</div>
+        </div>
+        <div style="background:rgba(34,197,94,0.08); padding:14px; border-radius:10px;">
+          <div style="font-size:0.6em; color:var(--z-muted);">ZARZ</div>
+          <div style="font-size:1.2em; font-weight:800; color:#fff;">33,640,000</div>
+        </div>
+        <div style="background:rgba(6,182,212,0.08); padding:14px; border-radius:10px;">
+          <div style="font-size:0.6em; color:var(--z-muted);">USDC</div>
+          <div style="font-size:1.2em; font-weight:800; color:#fff;">410,000</div>
+        </div>
+        <div style="background:rgba(245,158,11,0.08); padding:14px; border-radius:10px;">
+          <div style="font-size:0.6em; color:var(--z-muted);">EURC</div>
+          <div style="font-size:1.2em; font-weight:800; color:#fff;">125,000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 7: TREASURY & FX ==================== -->
+<section>
+  <div class="pill">Treasury &amp; FX</div>
+  <h2>Multi-asset treasury.<br><span class="accent">No hidden spread.</span></h2>
+  <div class="grid-2" style="margin-top:32px;">
+    <div class="card">
+      <div class="number">A · SELF-SERVE</div>
+      <h3>Dashboard + API</h3>
+      <p>Hold 16 assets across named accounts. Convert at posted rates, settled on Stellar DEX. Repatriate within minutes.</p>
+      <div class="divider"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.7em;">
+        <div><span style="color:var(--z-muted);">Fee</span><br><strong style="color:#fff;">0.25 – 0.5%</strong></div>
+        <div><span style="color:var(--z-muted);">Settlement</span><br><strong style="color:#fff;">On-chain ~6s</strong></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="number">B · OTC DESK</div>
+      <h3>Dealer-negotiated</h3>
+      <p>For corporates, banks and fintechs running bulk FX, swaps or cross-border treasury at scale. Competitive pricing, flexible execution.</p>
+      <div class="divider"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.7em;">
+        <div><span style="color:var(--z-muted);">Settlement</span><br><strong style="color:#fff;">T+0 to T+1</strong></div>
+        <div><span style="color:var(--z-muted);">Access</span><br><strong style="color:#fff;">API + voice desk</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 8: COVERAGE ==================== -->
+<section>
+  <div class="pill">Coverage</div>
+  <h2>Africa. Asia-Pacific.<br><span class="accent">LATAM. MENA.</span></h2>
+  <p style="max-width:600px; margin-bottom:12px;">Every on-ramp pairs with every off-ramp — adding one country opens routes into every existing destination. <strong style="color:#fff;">Coverage compounds.</strong></p>
+  <div class="region-grid">
+    <div class="region-card">
+      <div class="region-count">30+</div>
+      <div class="region-name">Africa</div>
+      <div class="methods">
+        <span>MoMo</span><span>Bank</span><span>Cash</span><span>EFT</span>
+      </div>
+    </div>
+    <div class="region-card">
+      <div class="region-count">10+</div>
+      <div class="region-name">Asia-Pacific</div>
+      <div class="methods">
+        <span>Bank</span><span>MoMo</span><span>QR</span><span>Wallet</span>
+      </div>
+    </div>
+    <div class="region-card">
+      <div class="region-count">5+</div>
+      <div class="region-name">LATAM</div>
+      <div class="methods">
+        <span>Bank</span><span>PIX</span><span>SPEI</span>
+      </div>
+    </div>
+    <div class="region-card">
+      <div class="region-count">5+</div>
+      <div class="region-name">MENA &amp; Other</div>
+      <div class="methods">
+        <span>Bank</span><span>Wallet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 9: WHY ZEAM ==================== -->
+<section>
+  <div class="pill">Why Zeam</div>
+  <h2>Payments that are <span class="accent">predictable</span>,<br>not hopeful.</h2>
+  <div class="grid-3" style="margin-top:36px;">
+    <div class="why-card">
+      <div class="big-num">2–6w</div>
+      <div class="sub">Time-to-live</div>
+      <h3>The Connector Model</h3>
+      <p>Pre-configured corridors replace per-provider engineering. New countries arrive as configs, not rewrites.</p>
+    </div>
+    <div class="why-card">
+      <div class="big-num">~6s</div>
+      <div class="sub">On-chain confirmation</div>
+      <h3>Stablecoin Settlement</h3>
+      <p>Funds move on-chain first, then deliver locally. Every settlement has a verifiable transaction ID.</p>
+    </div>
+    <div class="why-card">
+      <div class="big-num">99.99%+</div>
+      <div class="sub">STP Target</div>
+      <h3>Deterministic Delivery</h3>
+      <p>Every payment reaches one of two outcomes — delivered or refunded. No limbo. No manual chasing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 10: SECURITY & COMPLIANCE ==================== -->
+<section>
+  <div class="pill">Security &amp; Compliance</div>
+  <h2>Compliant by design.<br><span class="accent">Auditable by default.</span></h2>
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <h3 style="font-size:1em; margin-bottom:20px;">Per-corridor compliance</h3>
+      <ul class="feature-list">
+        <li>Compliance Model A / B / C — selectable per corridor based on your regulatory posture and licence structure</li>
+        <li>On-chain auditability — every settlement carries a verifiable transaction ID on Stellar, Ethereum or Solana</li>
+        <li>Deterministic outcomes — every payment resolves to <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong>, no limbo states</li>
+        <li>Idempotency enforced on every write — no duplicate payments, ever</li>
+        <li>Full audit log across payroll, treasury, collections &amp; reporting</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="number">COMPLIANCE MODELS</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:16px;">
+          <div style="text-align:center; padding:16px 12px; background:rgba(99,102,241,0.08); border-radius:10px;">
+            <div style="font-size:1.6em; font-weight:900; color:#fff;">A</div>
+            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Zeam holds<br>compliance</div>
+          </div>
+          <div style="text-align:center; padding:16px 12px; background:rgba(34,197,94,0.08); border-radius:10px;">
+            <div style="font-size:1.6em; font-weight:900; color:#fff;">B</div>
+            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Shared<br>responsibility</div>
+          </div>
+          <div style="text-align:center; padding:16px 12px; background:rgba(6,182,212,0.08); border-radius:10px;">
+            <div style="font-size:1.6em; font-weight:900; color:#fff;">C</div>
+            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Client holds<br>compliance</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="number">REGISTERED ENTITY</div>
+        <div style="font-size:0.78em; color:var(--z-muted); line-height:1.8;">
+          <strong style="color:#fff;">Zeam SA (Pty) Ltd</strong><br>
+          Reg No. 2024/165590/07<br>
+          VAT 4080318506 · Tax 9859714181<br>
+          Stellenbosch, South Africa
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 11: INTEGRATION JOURNEY ==================== -->
+<section>
+  <div class="pill">Integration</div>
+  <h2>Sandbox to production<br><span class="accent">in four steps.</span></h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; margin-top:36px;">
+    <div class="card" style="position:relative; padding:28px 24px;">
+      <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-accent), var(--z-cyan));"></div>
+      <div style="font-size:2em; font-weight:900; color:var(--z-accent); line-height:1;">01</div>
+      <h3 style="font-size:0.9em; margin:12px 0 8px;">Get sandbox keys</h3>
+      <p style="font-size:0.7em;">Sign up at the developer portal. Six seeded corridors are ready out of the box — no credit card, no approval wait.</p>
+      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-accent);">~2 min</div>
+    </div>
+    <div class="card" style="position:relative; padding:28px 24px;">
+      <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-cyan), var(--z-green));"></div>
+      <div style="font-size:2em; font-weight:900; color:var(--z-cyan); line-height:1;">02</div>
+      <h3 style="font-size:0.9em; margin:12px 0 8px;">Integrate the API</h3>
+      <p style="font-size:0.7em;">REST endpoints with official SDKs. Idempotency keys on every write. Wire up webhook events for real-time status.</p>
+      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-cyan);">~3 min first call</div>
+    </div>
+    <div class="card" style="position:relative; padding:28px 24px;">
+      <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-green), var(--z-amber));"></div>
+      <div style="font-size:2em; font-weight:900; color:var(--z-green); line-height:1;">03</div>
+      <h3 style="font-size:0.9em; margin:12px 0 8px;">Test your corridors</h3>
+      <p style="font-size:0.7em;">Simulate payouts, collections &amp; FX across seeded corridors. Live webhook delivery confirms every state change.</p>
+      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-green);">multi-chain sim</div>
+    </div>
+    <div class="card" style="position:relative; padding:28px 24px;">
+      <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-amber), var(--z-accent));"></div>
+      <div style="font-size:2em; font-weight:900; color:var(--z-amber); line-height:1;">04</div>
+      <h3 style="font-size:0.9em; margin:12px 0 8px;">Flip to production</h3>
+      <p style="font-size:0.7em;">Swap sandbox keys for production credentials. Same API, same endpoints — your integration carries over unchanged.</p>
+      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-amber);">same-day go-live</div>
+    </div>
+  </div>
+  <div style="margin-top:36px;">
+    <h3 style="font-size:0.9em; margin-bottom:16px;">Developer resources</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-accent); margin-bottom:8px;">zeam.money/developers</div>
+        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">API Reference</strong> — full REST docs, endpoint specs, error codes &amp; auth guides</div>
+      </div>
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-green); margin-bottom:8px;">SDKs &amp; Libraries</div>
+        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">Official SDKs</strong> — drop-in client libraries with typed models &amp; built-in idempotency</div>
+      </div>
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-cyan); margin-bottom:8px;">Webhooks &amp; Events</div>
+        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">Event Catalog</strong> — every lifecycle event documented with payload schemas &amp; retry logic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 12: CTA ==================== -->
+<section>
+  <div style="position:relative; overflow:hidden;">
+    <div class="orb orb-purple" style="top:-150px; right:-50px;"></div>
+    <div class="orb orb-cyan" style="bottom:-150px; left:-50px;"></div>
+    <div class="logo">zeam</div>
+    <h1 style="max-width:80%;">Ready to see it across <span class="accent">your corridors?</span></h1>
+    <div class="cta-grid">
+      <div class="cta-card primary">
+        <div class="number">01</div>
+        <h3>Talk to sales</h3>
+        <p>A 45-minute walkthrough scoped to your corridors, compliance posture and integration model — with a live cost model built around your volume.</p>
+        <div class="email">sales@zeam.money</div>
+      </div>
+      <div class="cta-card">
+        <div class="number">02</div>
+        <h3>Try the sandbox</h3>
+        <p>Six seeded corridors. Live webhook delivery. Multi-chain simulation. No credit card required — flip keys to production when you're ready.</p>
+        <div class="email">zeam.money/developers</div>
+      </div>
+    </div>
+    <div style="margin-top:40px; font-size:0.6em; color:#334155;">
+      Zeam SA (Pty) Ltd · Reg 2024/165590/07 · Stellenbosch, South Africa · zeam.money
+    </div>
+  </div>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    center: false,
+    controls: true,
+    controlsLayout: 'bottom-right',
+    progress: true,
+  });
+</script>
+</body>
+</html>
