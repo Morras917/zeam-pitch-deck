@@ -27,7 +27,7 @@
     color: var(--z-text);
   }
   .reveal .slides { text-align: left; }
-  .reveal .slides section { padding: 40px 60px; }
+  .reveal .slides section { padding: 28px 52px; }
 
   /* Background */
   body { background: var(--z-bg); }
@@ -43,7 +43,7 @@
     color: #fff;
   }
   .reveal h1 { font-size: 2.8em; }
-  .reveal h2 { font-size: 2.2em; }
+  .reveal h2 { font-size: 2.2em; margin-bottom: 0.3em; }
   .reveal h3 { font-size: 1.4em; font-weight: 600; }
   .reveal p, .reveal li { font-size: 0.85em; color: var(--z-muted); line-height: 1.7; }
 
@@ -55,14 +55,14 @@
 
   /* Stat cards */
   .stats-row {
-    display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;
+    display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
   }
   .stat-card {
     flex: 1; min-width: 160px;
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 28px 24px;
+    padding: 20px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -94,17 +94,17 @@
     border-radius: 100px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
   /* Feature list */
   .feature-list {
-    list-style: none; padding: 0; margin: 24px 0;
+    list-style: none; padding: 0; margin: 12px 0;
   }
   .feature-list li {
     position: relative;
     padding-left: 28px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     font-size: 0.82em;
     color: var(--z-muted);
   }
@@ -119,14 +119,14 @@
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 32px;
+    gap: 24px;
+    margin-top: 24px;
   }
   .grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
-    margin-top: 32px;
+    gap: 20px;
+    margin-top: 24px;
   }
 
   /* Card */
@@ -134,7 +134,7 @@
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 32px;
+    padding: 24px;
   }
   .card h3 { margin-top: 0; font-size: 1.1em; }
   .card p { font-size: 0.78em; }
@@ -164,14 +164,14 @@
 
   /* Pricing row */
   .pricing-row {
-    display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;
+    display: flex; gap: 14px; margin-top: 18px; flex-wrap: wrap;
   }
   .price-card {
-    flex: 1; min-width: 140px;
+    flex: 1; min-width: 130px;
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 24px 20px;
+    padding: 16px 14px;
     text-align: center;
   }
   .price-card.featured {
@@ -183,8 +183,8 @@
     text-transform: uppercase; letter-spacing: 0.08em;
   }
   .price-card .price {
-    font-size: 1.5em; font-weight: 800; color: #fff;
-    margin: 8px 0 4px;
+    font-size: 1.4em; font-weight: 800; color: #fff;
+    margin: 6px 0 3px;
   }
   .price-card .note {
     font-size: 0.6em; color: var(--z-muted);
@@ -194,14 +194,14 @@
   .region-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 32px;
+    gap: 16px;
+    margin-top: 20px;
   }
   .region-card {
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 24px;
+    padding: 18px;
   }
   .region-card .region-name {
     font-size: 1em; font-weight: 700; color: #fff;
@@ -226,7 +226,7 @@
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 32px;
+    padding: 24px;
     text-align: center;
   }
   .why-card .big-num {
@@ -248,21 +248,21 @@
     letter-spacing: 0.15em;
     text-transform: lowercase;
     color: var(--z-accent);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   /* CTA slide */
   .cta-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    margin-top: 40px;
+    gap: 24px;
+    margin-top: 28px;
   }
   .cta-card {
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 16px;
-    padding: 36px;
+    padding: 28px;
   }
   .cta-card.primary {
     border-color: var(--z-accent);
@@ -317,7 +317,7 @@
   .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--z-border), transparent);
-    margin: 24px 0;
+    margin: 14px 0;
   }
 
   /* PDF export */
@@ -367,7 +367,7 @@
 <section>
   <div class="pill">The Problem</div>
   <h2>Cross-border payments are <span class="accent">broken.</span></h2>
-  <div class="grid-3" style="margin-top:40px;">
+  <div class="grid-3" style="margin-top:28px;">
     <div class="card">
       <div style="font-size:2em; line-height:1; margin-bottom:12px;">🏦</div>
       <h3>Per-country banking</h3>
@@ -390,7 +390,7 @@
 <section>
   <div class="pill">Built For</div>
   <h2>Three audiences.<br><span class="accent">One platform</span> underneath.</h2>
-  <div class="grid-3" style="margin-top:36px;">
+  <div class="grid-3">
     <div class="card">
       <div class="number">01</div>
       <h3>Enterprises &amp; Multinationals</h3>
@@ -470,9 +470,9 @@
       <div class="note">/ month · custom · dedicated TAM</div>
     </div>
   </div>
-  <div style="margin-top:48px;">
+  <div style="margin-top:24px;">
     <div class="pill" style="background:rgba(34,197,94,0.1); color:var(--z-green);">Dashboard</div>
-    <h3 style="margin-top:12px;">Global Business Account — no engineering required</h3>
+    <h3 style="margin-top:8px; font-size:1.2em;">Global Business Account — no engineering required</h3>
   </div>
   <div class="pricing-row">
     <div class="price-card">
@@ -502,7 +502,7 @@
 <section>
   <div class="pill">Global Business Account</div>
   <h2>Run operations from <span class="accent">a single dashboard.</span></h2>
-  <div class="grid-2" style="margin-top:28px;">
+  <div class="grid-2">
     <div>
       <ul class="feature-list">
         <li>Multi-currency accounts — USDZ, ZARZ, USDC, EURC + 12 more</li>
@@ -605,7 +605,7 @@
 <section>
   <div class="pill">Why Zeam</div>
   <h2>Payments that are <span class="accent">predictable</span>,<br>not hopeful.</h2>
-  <div class="grid-3" style="margin-top:36px;">
+  <div class="grid-3">
     <div class="why-card">
       <div class="big-num">2–6w</div>
       <div class="sub">Time-to-live</div>
@@ -633,36 +633,36 @@
   <h2>Compliant by design.<br><span class="accent">Auditable by default.</span></h2>
   <div class="grid-2" style="margin-top:32px;">
     <div>
-      <h3 style="font-size:1em; margin-bottom:20px;">Per-corridor compliance</h3>
+      <h3 style="font-size:0.95em; margin-bottom:8px;">Per-corridor compliance</h3>
       <ul class="feature-list">
-        <li>Compliance Model A / B / C — selectable per corridor based on your regulatory posture and licence structure</li>
-        <li>On-chain auditability — every settlement carries a verifiable transaction ID on Stellar, Ethereum or Solana</li>
-        <li>Deterministic outcomes — every payment resolves to <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong>, no limbo states</li>
-        <li>Idempotency enforced on every write — no duplicate payments, ever</li>
+        <li>Compliance Model A / B / C — selectable per corridor based on regulatory posture</li>
+        <li>On-chain auditability — every settlement has a verifiable tx ID on Stellar, Ethereum or Solana</li>
+        <li>Deterministic outcomes — every payment resolves to <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong></li>
+        <li>Idempotency enforced on every write — no duplicate payments</li>
         <li>Full audit log across payroll, treasury, collections &amp; reporting</li>
       </ul>
     </div>
     <div>
-      <div class="card" style="margin-bottom:20px;">
+      <div class="card" style="margin-bottom:14px;">
         <div class="number">COMPLIANCE MODELS</div>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:16px;">
-          <div style="text-align:center; padding:16px 12px; background:rgba(99,102,241,0.08); border-radius:10px;">
-            <div style="font-size:1.6em; font-weight:900; color:#fff;">A</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:12px;">
+          <div style="text-align:center; padding:12px 10px; background:rgba(99,102,241,0.08); border-radius:10px;">
+            <div style="font-size:1.4em; font-weight:900; color:#fff;">A</div>
             <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Zeam holds<br>compliance</div>
           </div>
-          <div style="text-align:center; padding:16px 12px; background:rgba(34,197,94,0.08); border-radius:10px;">
-            <div style="font-size:1.6em; font-weight:900; color:#fff;">B</div>
+          <div style="text-align:center; padding:12px 10px; background:rgba(34,197,94,0.08); border-radius:10px;">
+            <div style="font-size:1.4em; font-weight:900; color:#fff;">B</div>
             <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Shared<br>responsibility</div>
           </div>
-          <div style="text-align:center; padding:16px 12px; background:rgba(6,182,212,0.08); border-radius:10px;">
-            <div style="font-size:1.6em; font-weight:900; color:#fff;">C</div>
+          <div style="text-align:center; padding:12px 10px; background:rgba(6,182,212,0.08); border-radius:10px;">
+            <div style="font-size:1.4em; font-weight:900; color:#fff;">C</div>
             <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Client holds<br>compliance</div>
           </div>
         </div>
       </div>
       <div class="card">
         <div class="number">REGISTERED ENTITY</div>
-        <div style="font-size:0.78em; color:var(--z-muted); line-height:1.8;">
+        <div style="font-size:0.75em; color:var(--z-muted); line-height:1.6;">
           <strong style="color:#fff;">Zeam SA (Pty) Ltd</strong><br>
           Reg No. 2024/165590/07<br>
           VAT 4080318506 · Tax 9859714181<br>
@@ -677,50 +677,50 @@
 <section>
   <div class="pill">Integration</div>
   <h2>Sandbox to production<br><span class="accent">in four steps.</span></h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; margin-top:36px;">
-    <div class="card" style="position:relative; padding:28px 24px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; margin-top:24px;">
+    <div class="card" style="position:relative; padding:20px 18px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-accent), var(--z-cyan));"></div>
-      <div style="font-size:2em; font-weight:900; color:var(--z-accent); line-height:1;">01</div>
-      <h3 style="font-size:0.9em; margin:12px 0 8px;">Get sandbox keys</h3>
-      <p style="font-size:0.7em;">Sign up at the developer portal. Six seeded corridors are ready out of the box — no credit card, no approval wait.</p>
-      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-accent);">~2 min</div>
+      <div style="font-size:1.6em; font-weight:900; color:var(--z-accent); line-height:1;">01</div>
+      <h3 style="font-size:0.85em; margin:8px 0 6px;">Get sandbox keys</h3>
+      <p style="font-size:0.65em;">Sign up at the developer portal. Six seeded corridors ready — no credit card, no approval wait.</p>
+      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-accent);">~2 min</div>
     </div>
-    <div class="card" style="position:relative; padding:28px 24px;">
+    <div class="card" style="position:relative; padding:20px 18px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-cyan), var(--z-green));"></div>
-      <div style="font-size:2em; font-weight:900; color:var(--z-cyan); line-height:1;">02</div>
-      <h3 style="font-size:0.9em; margin:12px 0 8px;">Integrate the API</h3>
-      <p style="font-size:0.7em;">REST endpoints with official SDKs. Idempotency keys on every write. Wire up webhook events for real-time status.</p>
-      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-cyan);">~3 min first call</div>
+      <div style="font-size:1.6em; font-weight:900; color:var(--z-cyan); line-height:1;">02</div>
+      <h3 style="font-size:0.85em; margin:8px 0 6px;">Integrate the API</h3>
+      <p style="font-size:0.65em;">REST endpoints with official SDKs. Idempotency on every write. Webhook events for real-time status.</p>
+      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-cyan);">~3 min first call</div>
     </div>
-    <div class="card" style="position:relative; padding:28px 24px;">
+    <div class="card" style="position:relative; padding:20px 18px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-green), var(--z-amber));"></div>
-      <div style="font-size:2em; font-weight:900; color:var(--z-green); line-height:1;">03</div>
-      <h3 style="font-size:0.9em; margin:12px 0 8px;">Test your corridors</h3>
-      <p style="font-size:0.7em;">Simulate payouts, collections &amp; FX across seeded corridors. Live webhook delivery confirms every state change.</p>
-      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-green);">multi-chain sim</div>
+      <div style="font-size:1.6em; font-weight:900; color:var(--z-green); line-height:1;">03</div>
+      <h3 style="font-size:0.85em; margin:8px 0 6px;">Test your corridors</h3>
+      <p style="font-size:0.65em;">Simulate payouts, collections &amp; FX across seeded corridors. Webhooks confirm every state change.</p>
+      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-green);">multi-chain sim</div>
     </div>
-    <div class="card" style="position:relative; padding:28px 24px;">
+    <div class="card" style="position:relative; padding:20px 18px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-amber), var(--z-accent));"></div>
-      <div style="font-size:2em; font-weight:900; color:var(--z-amber); line-height:1;">04</div>
-      <h3 style="font-size:0.9em; margin:12px 0 8px;">Flip to production</h3>
-      <p style="font-size:0.7em;">Swap sandbox keys for production credentials. Same API, same endpoints — your integration carries over unchanged.</p>
-      <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:0.58em; color:var(--z-amber);">same-day go-live</div>
+      <div style="font-size:1.6em; font-weight:900; color:var(--z-amber); line-height:1;">04</div>
+      <h3 style="font-size:0.85em; margin:8px 0 6px;">Flip to production</h3>
+      <p style="font-size:0.65em;">Swap keys for production credentials. Same API, same endpoints — integration carries over unchanged.</p>
+      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-amber);">same-day go-live</div>
     </div>
   </div>
-  <div style="margin-top:36px;">
-    <h3 style="font-size:0.9em; margin-bottom:16px;">Developer resources</h3>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-accent); margin-bottom:8px;">zeam.money/developers</div>
-        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">API Reference</strong> — full REST docs, endpoint specs, error codes &amp; auth guides</div>
+  <div style="margin-top:20px;">
+    <h3 style="font-size:0.85em; margin-bottom:10px;">Developer resources</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-accent); margin-bottom:6px;">zeam.money/developers</div>
+        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">API Reference</strong> — REST docs, endpoint specs, error codes &amp; auth</div>
       </div>
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-green); margin-bottom:8px;">SDKs &amp; Libraries</div>
-        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">Official SDKs</strong> — drop-in client libraries with typed models &amp; built-in idempotency</div>
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-green); margin-bottom:6px;">SDKs &amp; Libraries</div>
+        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">Official SDKs</strong> — typed client libraries with built-in idempotency</div>
       </div>
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:20px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.65em; color:var(--z-cyan); margin-bottom:8px;">Webhooks &amp; Events</div>
-        <div style="font-size:0.72em; color:var(--z-muted);"><strong style="color:#fff;">Event Catalog</strong> — every lifecycle event documented with payload schemas &amp; retry logic</div>
+      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-cyan); margin-bottom:6px;">Webhooks &amp; Events</div>
+        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">Event Catalog</strong> — lifecycle events with payload schemas &amp; retry logic</div>
       </div>
     </div>
   </div>
@@ -747,7 +747,7 @@
         <div class="email">zeam.money/developers</div>
       </div>
     </div>
-    <div style="margin-top:40px; font-size:0.6em; color:#334155;">
+    <div style="margin-top:24px; font-size:0.6em; color:#334155;">
       Zeam SA (Pty) Ltd · Reg 2024/165590/07 · Stellenbosch, South Africa · zeam.money
     </div>
   </div>
