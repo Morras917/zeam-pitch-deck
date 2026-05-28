@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0a0a0f">
+<meta name="description" content="Zeam Connect — Financial infrastructure for global money movement. 130+ countries, stablecoin settlement, 99.99% STP.">
+<meta property="og:title" content="Zeam Connect — Sales Pitch Deck 2026">
+<meta property="og:description" content="One integration. 130+ countries. Stablecoin settlement on Stellar, Ethereum & Solana.">
+<meta property="og:type" content="website">
 <title>Zeam Connect — Sales Pitch Deck 2026</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
@@ -30,7 +37,12 @@
   .reveal .slides section { padding: 28px 52px; }
 
   /* Background */
-  body { background: var(--z-bg); }
+  body {
+    background: var(--z-bg);
+    margin: 0;
+    overflow: hidden;
+  }
+  html { background: var(--z-bg); }
   .reveal .slide-background { background: var(--z-bg) !important; }
 
   /* Typography */
@@ -318,6 +330,12 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--z-border), transparent);
     margin: 14px 0;
+  }
+
+  /* Small viewports: hide controls that become too tiny to tap */
+  @media (max-width: 500px) {
+    .reveal .controls { display: none !important; }
+    .reveal .slide-number { display: none !important; }
   }
 
   /* PDF export */
@@ -764,6 +782,8 @@
     width: 1280,
     height: 720,
     margin: 0.04,
+    minScale: 0.15,
+    maxScale: 2.0,
     transition: 'slide',
     transitionSpeed: 'default',
     backgroundTransition: 'fade',
@@ -771,6 +791,9 @@
     controls: true,
     controlsLayout: 'bottom-right',
     progress: true,
+    touch: true,
+    hideInactiveCursor: true,
+    hideCursorTime: 3000,
   });
 </script>
 </body>
