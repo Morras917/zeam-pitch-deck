@@ -456,7 +456,7 @@
 <section>
   <div class="pill">Infrastructure</div>
   <h2>First payment in<br><span class="accent">under five minutes.</span></h2>
-  <div class="grid-2" style="margin-top:32px;">
+  <div class="grid-2">
     <div>
       <ul class="feature-list">
         <li>Account provisioning, on-ramp, off-ramp, payouts, collections &amp; FX — single API</li>
@@ -467,7 +467,7 @@
       </ul>
     </div>
     <div class="code-block">
-      <span class="comment">// POST /v1/payouts</span><br><br>
+      <span class="comment">// POST /v1/payouts</span><br>
       curl -X POST <span class="str">api.zeam.money/v1/payouts</span> \<br>
       &nbsp;&nbsp;-H <span class="str">"Authorization: Bearer $KEY"</span> \<br>
       &nbsp;&nbsp;-d '{<br>
@@ -475,7 +475,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"amount"</span>: <span class="str">"500.00"</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"currency"</span>: <span class="str">"ZAR"</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"funding"</span>: {<span class="str">"asset":"USDZ"</span>}<br>
-      &nbsp;&nbsp;}'<br><br>
+      &nbsp;&nbsp;}'<br>
       <span class="comment">── webhook: payout.delivered ──</span><br>
       { <span class="kw">"status"</span>: <span class="str">"delivered"</span>,<br>
       &nbsp;&nbsp;<span class="kw">"settled_at"</span>: <span class="str">"2026-04-18T10:14:07Z"</span> }
@@ -504,9 +504,9 @@
       <div class="note">/ month · custom · dedicated TAM</div>
     </div>
   </div>
-  <div style="margin-top:24px;">
+  <div style="margin-top:16px;">
     <div class="pill" style="background:rgba(34,197,94,0.1); color:var(--z-green);">Dashboard</div>
-    <h3 style="margin-top:8px; font-size:1.2em;">Global Business Account — no engineering required</h3>
+    <h3 style="margin-top:6px; font-size:1.1em;">Global Business Account — no engineering required</h3>
   </div>
   <div class="pricing-row">
     <div class="price-card">
@@ -574,11 +574,11 @@
 <section>
   <div class="pill">Treasury &amp; FX</div>
   <h2>Multi-asset treasury.<br><span class="accent">No hidden spread.</span></h2>
-  <div class="grid-2" style="margin-top:32px;">
+  <div class="grid-2">
     <div class="card">
       <div class="number">A · SELF-SERVE</div>
       <h3>Dashboard + API</h3>
-      <p>Hold 16 assets across named accounts. Convert at posted rates, settled on Stellar DEX. Repatriate within minutes.</p>
+      <p>Hold 16 assets across named accounts. Convert at posted rates on Stellar DEX. Repatriate within minutes.</p>
       <div class="divider"></div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.7em;">
         <div><span style="color:var(--z-muted);">Fee</span><br><strong style="color:#fff;">0.25 – 0.5%</strong></div>
@@ -588,7 +588,7 @@
     <div class="card">
       <div class="number">B · OTC DESK</div>
       <h3>Dealer-negotiated</h3>
-      <p>For corporates, banks and fintechs running bulk FX, swaps or cross-border treasury at scale. Competitive pricing, flexible execution.</p>
+      <p>For corporates, banks and fintechs running bulk FX or cross-border treasury at scale.</p>
       <div class="divider"></div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.7em;">
         <div><span style="color:var(--z-muted);">Settlement</span><br><strong style="color:#fff;">T+0 to T+1</strong></div>
@@ -665,42 +665,40 @@
 <section>
   <div class="pill">Security &amp; Compliance</div>
   <h2>Compliant by design.<br><span class="accent">Auditable by default.</span></h2>
-  <div class="grid-2" style="margin-top:32px;">
+  <div class="grid-2">
     <div>
-      <h3 style="font-size:0.95em; margin-bottom:8px;">Per-corridor compliance</h3>
+      <h3 style="font-size:0.9em; margin-bottom:6px;">Per-corridor compliance</h3>
       <ul class="feature-list">
-        <li>Compliance Model A / B / C — selectable per corridor based on regulatory posture</li>
-        <li>On-chain auditability — every settlement has a verifiable tx ID on Stellar, Ethereum or Solana</li>
-        <li>Deterministic outcomes — every payment resolves to <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong></li>
-        <li>Idempotency enforced on every write — no duplicate payments</li>
-        <li>Full audit log across payroll, treasury, collections &amp; reporting</li>
+        <li>Compliance Model A / B / C — selectable per corridor</li>
+        <li>On-chain auditability — verifiable tx ID on Stellar, Ethereum or Solana</li>
+        <li>Deterministic outcomes — <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong>, no limbo</li>
+        <li>Idempotency on every write — no duplicate payments</li>
+        <li>Full audit log across payroll, treasury &amp; collections</li>
       </ul>
     </div>
     <div>
-      <div class="card" style="margin-bottom:14px;">
+      <div class="card" style="margin-bottom:12px;">
         <div class="number">COMPLIANCE MODELS</div>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:12px;">
-          <div style="text-align:center; padding:12px 10px; background:rgba(99,102,241,0.08); border-radius:10px;">
-            <div style="font-size:1.4em; font-weight:900; color:#fff;">A</div>
-            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Zeam holds<br>compliance</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:10px;">
+          <div style="text-align:center; padding:10px 8px; background:rgba(99,102,241,0.08); border-radius:10px;">
+            <div style="font-size:1.3em; font-weight:900; color:#fff;">A</div>
+            <div style="font-size:0.55em; color:var(--z-muted); margin-top:3px;">Zeam holds<br>compliance</div>
           </div>
-          <div style="text-align:center; padding:12px 10px; background:rgba(34,197,94,0.08); border-radius:10px;">
-            <div style="font-size:1.4em; font-weight:900; color:#fff;">B</div>
-            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Shared<br>responsibility</div>
+          <div style="text-align:center; padding:10px 8px; background:rgba(34,197,94,0.08); border-radius:10px;">
+            <div style="font-size:1.3em; font-weight:900; color:#fff;">B</div>
+            <div style="font-size:0.55em; color:var(--z-muted); margin-top:3px;">Shared<br>responsibility</div>
           </div>
-          <div style="text-align:center; padding:12px 10px; background:rgba(6,182,212,0.08); border-radius:10px;">
-            <div style="font-size:1.4em; font-weight:900; color:#fff;">C</div>
-            <div style="font-size:0.6em; color:var(--z-muted); margin-top:4px;">Client holds<br>compliance</div>
+          <div style="text-align:center; padding:10px 8px; background:rgba(6,182,212,0.08); border-radius:10px;">
+            <div style="font-size:1.3em; font-weight:900; color:#fff;">C</div>
+            <div style="font-size:0.55em; color:var(--z-muted); margin-top:3px;">Client holds<br>compliance</div>
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" style="padding:16px;">
         <div class="number">REGISTERED ENTITY</div>
-        <div style="font-size:0.75em; color:var(--z-muted); line-height:1.6;">
-          <strong style="color:#fff;">Zeam SA (Pty) Ltd</strong><br>
-          Reg No. 2024/165590/07<br>
-          VAT 4080318506 · Tax 9859714181<br>
-          Stellenbosch, South Africa
+        <div style="font-size:0.72em; color:var(--z-muted); line-height:1.5;">
+          <strong style="color:#fff;">Zeam SA (Pty) Ltd</strong> · Reg 2024/165590/07<br>
+          VAT 4080318506 · Tax 9859714181 · Stellenbosch, SA
         </div>
       </div>
     </div>
