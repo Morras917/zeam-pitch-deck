@@ -33,10 +33,17 @@
     --r-heading-line-height: 1.1;
   }
 
-  /* Hard reset: zero out every reveal.js theme margin */
-  .reveal h1, .reveal h2, .reveal h3, .reveal h4,
-  .reveal p, .reveal ul, .reveal ol, .reveal li,
-  .reveal blockquote, .reveal pre, .reveal div {
+  /* Reset theme margins — scoped to slide content only, NOT reveal.js structure */
+  .reveal .slides section h1,
+  .reveal .slides section h2,
+  .reveal .slides section h3,
+  .reveal .slides section h4,
+  .reveal .slides section p,
+  .reveal .slides section ul,
+  .reveal .slides section ol,
+  .reveal .slides section li,
+  .reveal .slides section blockquote,
+  .reveal .slides section pre {
     margin: 0; padding: 0;
   }
 
@@ -805,18 +812,11 @@
     hideCursorTime: 3000,
   });
 
-  // Auto-fit: scale down any slide whose content overflows
+  // Auto-fit: zoom down any slide whose content overflows the 720px canvas
   Reveal.on('ready', () => {
-    const slideH = 720;
     document.querySelectorAll('.reveal .slides > section').forEach(s => {
-      const pad = 48; // top + bottom padding
-      const maxH = slideH - pad;
-      if (s.scrollHeight > slideH) {
-        const scale = maxH / s.scrollHeight;
-        const wrap = document.createElement('div');
-        wrap.style.cssText = `transform:scale(${scale.toFixed(3)});transform-origin:top left;width:${(100/scale).toFixed(1)}%`;
-        while (s.firstChild) wrap.appendChild(s.firstChild);
-        s.appendChild(wrap);
+      if (s.scrollHeight > 720) {
+        s.style.zoom = (672 / s.scrollHeight).toFixed(3);
       }
     });
   });
