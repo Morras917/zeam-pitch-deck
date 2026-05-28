@@ -73,9 +73,9 @@
     color: #fff;
     margin: 0;
   }
-  .reveal h1 { font-size: 2.6em; }
-  .reveal h2 { font-size: 2em; margin-bottom: 0.2em; }
-  .reveal h3 { font-size: 1.3em; font-weight: 600; }
+  .reveal h1 { font-size: 2.2em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: 0.15em; }
+  .reveal h3 { font-size: 1.1em; font-weight: 600; }
   .reveal p, .reveal li { font-size: 0.82em; color: var(--z-muted); line-height: 1.5; margin: 0; }
 
   /* Accent highlight */
@@ -165,10 +165,10 @@
     background: var(--z-surface);
     border: 1px solid var(--z-border);
     border-radius: 14px;
-    padding: 20px;
+    padding: 16px;
   }
-  .card h3 { margin: 0 0 4px 0; font-size: 1em; }
-  .card p { font-size: 0.74em; margin: 0; }
+  .card h3 { margin: 0 0 4px 0; font-size: 0.95em; }
+  .card p { font-size: 0.72em; margin: 0; }
   .card .number,
   .cta-card .number {
     font-size: 0.65em; font-weight: 700;
@@ -455,15 +455,15 @@
 <!-- ==================== SLIDE 4: API ==================== -->
 <section>
   <div class="pill">Infrastructure</div>
-  <h2>First payment in<br><span class="accent">under five minutes.</span></h2>
+  <h2>First payment in <span class="accent">under five minutes.</span></h2>
   <div class="grid-2">
     <div>
       <ul class="feature-list">
-        <li>Account provisioning, on-ramp, off-ramp, payouts, collections &amp; FX — single API</li>
+        <li>On-ramp, off-ramp, payouts, collections &amp; FX — single API</li>
         <li>Idempotency keys · webhook events · official SDKs</li>
         <li>Multi-chain settlement — Stellar, Ethereum, Solana</li>
-        <li>Compliance Model A / B / C selectable per corridor</li>
-        <li>Sandbox with seeded corridors &amp; live webhook delivery</li>
+        <li>Compliance Model A / B / C per corridor</li>
+        <li>Sandbox with seeded corridors &amp; live webhooks</li>
       </ul>
     </div>
     <div class="code-block">
@@ -476,9 +476,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"currency"</span>: <span class="str">"ZAR"</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"funding"</span>: {<span class="str">"asset":"USDZ"</span>}<br>
       &nbsp;&nbsp;}'<br>
-      <span class="comment">── webhook: payout.delivered ──</span><br>
-      { <span class="kw">"status"</span>: <span class="str">"delivered"</span>,<br>
-      &nbsp;&nbsp;<span class="kw">"settled_at"</span>: <span class="str">"2026-04-18T10:14:07Z"</span> }
+      { <span class="kw">"status"</span>: <span class="str">"delivered"</span>, <span class="kw">"settled_at"</span>: <span class="str">"2026-04-18T10:14Z"</span> }
     </div>
   </div>
 </section>
@@ -490,11 +488,10 @@
   <div class="grid-2">
     <div>
       <ul class="feature-list">
-        <li>Multi-currency accounts — USDZ, ZARZ, USDC, EURC + 12 more</li>
-        <li>Bulk payouts to bank, mobile money, cash, wallet &amp; voucher</li>
+        <li>16 assets — USDZ, ZARZ, USDC, EURC + 12 more</li>
+        <li>Bulk payouts to bank, mobile money, cash &amp; wallet</li>
         <li>Collections with automatic reconciliation</li>
-        <li>Stablecoin ↔ fiat conversion — no hidden spread</li>
-        <li>Full audit log · payroll · treasury · reporting</li>
+        <li>Stablecoin ↔ fiat — no hidden spread</li>
       </ul>
     </div>
     <div class="card" style="padding:20px;">
@@ -553,23 +550,12 @@
 <section>
   <div class="pill">Coverage</div>
   <h2><span class="accent">130+ countries.</span> 142 live connectors.</h2>
-  <p style="max-width:680px; margin-bottom:10px;">Every on-ramp pairs with every off-ramp — adding one country opens routes into every existing destination. <strong style="color:#fff;">Coverage compounds.</strong></p>
   <div class="grid-2">
     <div>
-      <div class="stats-row" style="margin-top:0;">
-        <div class="stat-card">
-          <div class="num">130+</div>
-          <div class="label">Countries</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">142</div>
-          <div class="label">Connectors</div>
-        </div>
-      </div>
-      <ul class="feature-list" style="margin-top:12px;">
+      <ul class="feature-list">
+        <li>Every on-ramp pairs with every off-ramp</li>
         <li>Bank · EFT · mobile money · cash · voucher</li>
         <li>QR · PIX · SPEI · M-Pesa · wallet</li>
-        <li>On-ramp &amp; off-ramp on every corridor</li>
         <li>New countries as connector configs, not rewrites</li>
       </ul>
     </div>
@@ -578,7 +564,7 @@
       <div style="font-size:0.7em; color:var(--z-muted); line-height:1.6;">
         <strong style="color:#fff;">ZA-OFF-001</strong> · Bank (EFT) · ZAR · ~6s<br>
         <strong style="color:#fff;">KE-ON-004</strong> · M-Pesa · KES · ~11s<br>
-        <strong style="color:#fff;">ZA-OFF-007</strong> · Voucher (cash) · ZAR · ~22s<br>
+        <strong style="color:#fff;">ZA-OFF-007</strong> · Voucher · ZAR · ~22s<br>
         <strong style="color:#fff;">NG-OFF-002</strong> · Bank · NGN · ~8s<br>
         <strong style="color:#fff;">GH-ON-001</strong> · MoMo · GHS · ~14s
       </div>
@@ -589,25 +575,25 @@
 <!-- ==================== SLIDE 8: WHY ZEAM ==================== -->
 <section>
   <div class="pill">Why Zeam</div>
-  <h2>Payments that are <span class="accent">predictable</span>,<br>not hopeful.</h2>
+  <h2><span class="accent">Predictable</span>, not hopeful.</h2>
   <div class="grid-3">
     <div class="why-card">
       <div class="big-num">2–6w</div>
       <div class="sub">Time-to-live</div>
-      <h3>The Connector Model</h3>
-      <p>Pre-configured corridors replace per-provider engineering. New countries arrive as configs, not rewrites.</p>
+      <h3>Connector Model</h3>
+      <p>Pre-configured corridors replace per-provider engineering.</p>
     </div>
     <div class="why-card">
       <div class="big-num">~6s</div>
       <div class="sub">On-chain confirmation</div>
       <h3>Stablecoin Settlement</h3>
-      <p>Funds move on-chain first, then deliver locally. Every settlement has a verifiable transaction ID.</p>
+      <p>Funds settle on-chain first, then deliver locally. Verifiable tx ID.</p>
     </div>
     <div class="why-card">
       <div class="big-num">99.99%+</div>
       <div class="sub">STP Target</div>
       <h3>Deterministic Delivery</h3>
-      <p>Every payment reaches one of two outcomes — delivered or refunded. No limbo. No manual chasing.</p>
+      <p>Every payment: delivered or refunded. No limbo.</p>
     </div>
   </div>
 </section>
@@ -619,11 +605,10 @@
   <div class="grid-2">
     <div>
       <ul class="feature-list">
-        <li>Compliance Model A / B / C — selectable per corridor</li>
-        <li>On-chain auditability — verifiable tx ID on Stellar, Ethereum or Solana</li>
-        <li>Deterministic outcomes — <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong></li>
-        <li>Idempotency on every write — no duplicates</li>
-        <li>Full audit log across payroll, treasury &amp; collections</li>
+        <li>Compliance Model A / B / C per corridor</li>
+        <li>On-chain auditability — verifiable tx ID</li>
+        <li>Deterministic: <strong style="color:#fff;">delivered</strong> or <strong style="color:#fff;">refunded</strong></li>
+        <li>Idempotency on every write</li>
       </ul>
     </div>
     <div>
@@ -658,52 +643,35 @@
 <!-- ==================== SLIDE 10: INTEGRATION JOURNEY ==================== -->
 <section>
   <div class="pill">Integration</div>
-  <h2>Sandbox to production<br><span class="accent">in four steps.</span></h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; margin-top:24px;">
-    <div class="card" style="position:relative; padding:20px 18px;">
+  <h2>Sandbox to production <span class="accent">in four steps.</span></h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px; margin-top:18px;">
+    <div class="card" style="position:relative; padding:16px 14px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-accent), var(--z-cyan));"></div>
-      <div style="font-size:1.6em; font-weight:900; color:var(--z-accent); line-height:1;">01</div>
-      <h3 style="font-size:0.85em; margin:8px 0 6px;">Get sandbox keys</h3>
-      <p style="font-size:0.65em;">Sign up at the developer portal. Six seeded corridors ready — no credit card, no approval wait.</p>
-      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-accent);">~2 min</div>
+      <div style="font-size:1.4em; font-weight:900; color:var(--z-accent); line-height:1;">01</div>
+      <h3 style="font-size:0.8em; margin:6px 0 4px;">Get sandbox keys</h3>
+      <p style="font-size:0.6em;">Six seeded corridors ready — no credit card.</p>
+      <div style="margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:0.5em; color:var(--z-accent);">~2 min</div>
     </div>
-    <div class="card" style="position:relative; padding:20px 18px;">
+    <div class="card" style="position:relative; padding:16px 14px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-cyan), var(--z-green));"></div>
-      <div style="font-size:1.6em; font-weight:900; color:var(--z-cyan); line-height:1;">02</div>
-      <h3 style="font-size:0.85em; margin:8px 0 6px;">Integrate the API</h3>
-      <p style="font-size:0.65em;">REST endpoints with official SDKs. Idempotency on every write. Webhook events for real-time status.</p>
-      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-cyan);">~3 min first call</div>
+      <div style="font-size:1.4em; font-weight:900; color:var(--z-cyan); line-height:1;">02</div>
+      <h3 style="font-size:0.8em; margin:6px 0 4px;">Integrate the API</h3>
+      <p style="font-size:0.6em;">REST + SDKs. Idempotency. Webhooks.</p>
+      <div style="margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:0.5em; color:var(--z-cyan);">~3 min</div>
     </div>
-    <div class="card" style="position:relative; padding:20px 18px;">
+    <div class="card" style="position:relative; padding:16px 14px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-green), var(--z-amber));"></div>
-      <div style="font-size:1.6em; font-weight:900; color:var(--z-green); line-height:1;">03</div>
-      <h3 style="font-size:0.85em; margin:8px 0 6px;">Test your corridors</h3>
-      <p style="font-size:0.65em;">Simulate payouts, collections &amp; FX across seeded corridors. Webhooks confirm every state change.</p>
-      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-green);">multi-chain sim</div>
+      <div style="font-size:1.4em; font-weight:900; color:var(--z-green); line-height:1;">03</div>
+      <h3 style="font-size:0.8em; margin:6px 0 4px;">Test corridors</h3>
+      <p style="font-size:0.6em;">Simulate payouts, collections &amp; FX.</p>
+      <div style="margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:0.5em; color:var(--z-green);">multi-chain</div>
     </div>
-    <div class="card" style="position:relative; padding:20px 18px;">
+    <div class="card" style="position:relative; padding:16px 14px;">
       <div style="position:absolute; top:-1px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--z-amber), var(--z-accent));"></div>
-      <div style="font-size:1.6em; font-weight:900; color:var(--z-amber); line-height:1;">04</div>
-      <h3 style="font-size:0.85em; margin:8px 0 6px;">Flip to production</h3>
-      <p style="font-size:0.65em;">Swap keys for production credentials. Same API, same endpoints — integration carries over unchanged.</p>
-      <div style="margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--z-amber);">same-day go-live</div>
-    </div>
-  </div>
-  <div style="margin-top:20px;">
-    <h3 style="font-size:0.85em; margin-bottom:10px;">Developer resources</h3>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-accent); margin-bottom:6px;">zeam.money/developers</div>
-        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">API Reference</strong> — REST docs, endpoint specs, error codes &amp; auth</div>
-      </div>
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-green); margin-bottom:6px;">SDKs &amp; Libraries</div>
-        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">Official SDKs</strong> — typed client libraries with built-in idempotency</div>
-      </div>
-      <div style="background:var(--z-surface); border:1px solid var(--z-border); border-radius:12px; padding:14px 16px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.6em; color:var(--z-cyan); margin-bottom:6px;">Webhooks &amp; Events</div>
-        <div style="font-size:0.68em; color:var(--z-muted);"><strong style="color:#fff;">Event Catalog</strong> — lifecycle events with payload schemas &amp; retry logic</div>
-      </div>
+      <div style="font-size:1.4em; font-weight:900; color:var(--z-amber); line-height:1;">04</div>
+      <h3 style="font-size:0.8em; margin:6px 0 4px;">Go live</h3>
+      <p style="font-size:0.6em;">Swap keys. Same API, same endpoints.</p>
+      <div style="margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:0.5em; color:var(--z-amber);">same-day</div>
     </div>
   </div>
 </section>
